@@ -4,28 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Focus Hub</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
-  <h1>Focus Hub</h1>
+  <div id="focus-hub">
+    <h1>Focus Hub</h1>
+    <button id="theme-toggle">Toggle Dark Mode</button>
 
-  <div id="clock"></div>
-  <div id="session-timer"></div>
+    <!-- Clock & Session Timer -->
+    <div id="clock"></div>
+    <div id="session-timer"></div>
 
-  <button id="click-button">Click Me!</button>
-  <p>You have clicked <span id="click-count">0</span> times.</p>
+    <!-- Click Tracker + Color Flipper (Box that changes color with quotes) -->
+    <div id="color-box">
+      <p>You have clicked <span id="click-count">0</span> times.</p>
+    </div>
 
-  <div id="quote-box">
-    <p id="quote">“Your first quote will appear here.”</p>
+    <!-- Random Quote Box (from API) -->
+    <div id="quote-box">
+      <p id="quote">“Loading inspirational quote...”</p>
+      <p id="quote-timer">Next quote in: 4m 00s</p>
+    </div>
+
+    <!-- To-Do List -->
+    <div id="todo">
+      <h2>To-Do List</h2>
+      <input type="text" id="todo-input" placeholder="Add a task" />
+      <button id="add-todo">Add</button>
+      <ul id="todo-list"></ul>
+    </div>
   </div>
 
-  <div id="todo">
-    <h2>To-Do List</h2>
-    <input type="text" id="todo-input" placeholder="Add a task" />
-    <button id="add-todo">Add</button>
-    <ul id="todo-list"></ul>
-  </div>
-
-  <script src="script.js"></script>
+  <!-- Make sure you’re loading the correct script file -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
