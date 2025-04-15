@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Starter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Focus Hub</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hello JavaScript!</h1>
+  <h1>Focus Hub</h1>
+
+  <div id="clock"></div>
+  <div id="session-timer"></div>
+
+  <button id="click-button">Click Me!</button>
+  <p>You have clicked <span id="click-count">0</span> times.</p>
+
+  <div id="quote-box">
+    <p id="quote">“Your first quote will appear here.”</p>
+  </div>
+
+  <div id="todo">
+    <h2>To-Do List</h2>
+    <input type="text" id="todo-input" placeholder="Add a task" />
+    <button id="add-todo">Add</button>
+    <ul id="todo-list"></ul>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
