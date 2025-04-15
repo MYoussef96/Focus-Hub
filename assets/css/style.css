@@ -1,0 +1,159 @@
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Main container */
+#focus-hub {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Titles */
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Clock & session */
+#clock,
+#session-timer {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Click Counter Display */
+#click-count {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Color box (clickable area) */
+#color-box {
+  background-color: #dfe6e9;
+  height: 100px;
+  border-radius: 12px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Quote Box */
+#quote-box {
+  background-color: #f9f9f9;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* To-Do List */
+#todo {
+  margin-top: 20px;
+}
+
+#todo-input {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#add-todo {
+  padding: 10px 15px;
+  border: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#add-todo:hover {
+  background-color: #2980b9;
+}
+
+#todo-list {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#todo-list li {
+  padding: 8px;
+  background: #ecf0f1;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+#color-box {
+  transition: background-color 0.6s ease;
+}
+
+#todo-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+  cursor: pointer;
+}
+
+#todo-list li {
+  cursor: pointer;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  transition: background 0.2s ease;
+}
+
+#todo-list li:hover {
+  background-color: #f0f0f0;
+}
+
+/* DARK MODE STYLES */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark #focus-hub {
+  background-color: #2c2c2c;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.dark #todo-list li {
+  background-color: #3a3a3a;
+  color: #eee;
+}
+
+body.dark #todo-list li:hover {
+  background-color: #444;
+}
+
+body.dark #quote-box {
+  background-color: #333;
+  border-left-color: #90caf9;
+}
+
+body.dark #color-box {
+  background-color: #3a3a3a;
+}
