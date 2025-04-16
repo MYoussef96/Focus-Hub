@@ -1,4 +1,5 @@
-/* RESET */
+
+/* ========== RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -17,12 +18,24 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* ========== STRUCTURE ========== */
 #focus-hub {
   max-width: 1200px;
   width: 100%;
 }
 
-/* HEADER */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* ========== HEADER ========== */
 .hub-header {
   display: flex;
   justify-content: space-between;
@@ -44,7 +57,6 @@ body {
   gap: 16px;
   flex-wrap: wrap;
 }
-
 .main-nav a {
   text-decoration: none;
   font-weight: 600;
@@ -54,70 +66,11 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
   transition: background 0.3s ease;
 }
-
 .main-nav a:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-
-#theme-toggle {
-  padding: 8px 14px;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-#theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-/* THEME SELECTOR (Floating Circles) */
-.theme-selector {
-  display: flex;
-  gap: 12px;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 999;
-}
-
-.theme-circle {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid white;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.theme-circle:hover {
-  transform: scale(1.1);
-}
-
-.theme-circle[data-theme="focus"] { background: linear-gradient(to right, #e0eafc, #cfdef3); }
-.theme-circle[data-theme="galaxy"] { background: radial-gradient(circle at 30% 30%, #1d1d55, #0d0d22); }
-.theme-circle[data-theme="ocean"]  { background: linear-gradient(to right, #1a2980, #26d0ce); }
-.theme-circle[data-theme="blush"]  { background: linear-gradient(to right, #ffdde1, #ee9ca7); }
-
-/* GRID */
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-/* CARD */
+/* ========== CARD ========== */
 .card {
   background: rgba(255, 255, 255, 0.07);
   border-radius: 16px;
@@ -125,200 +78,29 @@ body {
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
   transition: all 0.4s ease;
-  color: #fff;
 }
 
-/* CLOCK */
-#clock {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-#session-timer {
-  text-align: center;
-  font-size: 1rem;
-  opacity: 0.85;
-}
-
-/* CLICK TRACKER */
-#color-box {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-/* QUOTE */
-#quote-box {
-  position: relative;
-}
-
-#quote-box p {
-  font-style: italic;
-  margin-top: 10px;
-}
-
-#quote-timer {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-#refresh-quote {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 1.1rem;
-  padding: 6px 10px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  backdrop-filter: blur(8px);
-}
-
-#refresh-quote:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-/* TO-DO */
-#todo h2 {
-  margin-bottom: 10px;
-}
-
-.todo-input-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-#todo-input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  outline: none;
-}
-
-#add-todo {
-  padding: 10px 14px;
-  font-size: 1.2rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#add-todo:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-#todo-list {
-  list-style: none;
-  margin-top: 10px;
-}
-
-#todo-list li {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 8px;
-  color: #fff;
-  transition: background 0.2s ease;
-  cursor: pointer;
-}
-
-#todo-list li.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-/* ANIMATION */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* THEMES */
-body.theme-focus {
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-  color: #111;
-}
-
-body.theme-focus .card,
-body.theme-focus input,
-body.theme-focus button {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #111;
-}
-
+/* ========== THEME COLORS ========== */
 body.theme-galaxy {
-  background: url('https://images.unsplash.com/photo-1475727946784-418b33b23e2f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  --accent: #8e44ad;
+  --accent-dark: #6c3483;
+  background: #1b1c31;
+  color: white;
 }
 
-body.theme-galaxy .card {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-body.theme-ocean {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
-}
-
-body.theme-ocean .card {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body.theme-blush {
-  background: linear-gradient(to right, #ffdde1, #ee9ca7);
-  color: #222;
-}
-
-body.theme-blush .card {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #222;
-}
-
-/* DARK MODE */
-body.dark {
-  filter: brightness(0.9) contrast(1.1);
-}
-
-/* TRANSITIONS */
-body,
-.card {
-  transition: background 0.5s ease, color 0.5s ease, backdrop-filter 0.5s ease;
-}
-
-/* PLANNER PAGE STYLES - REFINED WITH THEME FIX */
-
+/* ========== Planner styles ========== */
 .planner-container {
   padding: 30px 0;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .planner-container h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
   text-align: center;
-  color: inherit;
 }
 
 .planner-header {
@@ -329,43 +111,37 @@ body,
   margin-bottom: 20px;
   flex-wrap: wrap;
 }
-
 .planner-header button {
   padding: 8px 18px;
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: inherit;
+  background-color: var(--accent);
+  color: white;
   cursor: pointer;
   backdrop-filter: blur(10px);
   transition: background 0.3s ease;
 }
-
 .planner-header button:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--accent-dark);
 }
-
 .planner-header h3 {
   font-size: 1.1rem;
   font-weight: 600;
   padding: 5px 12px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  color: inherit;
 }
 
+/* Planner Grid */
 .planner-grid {
   display: grid;
   grid-template-columns: 100px repeat(7, 1fr);
-  grid-auto-rows: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.05);
+  grid-auto-rows: 60px; /* 1 block = 60px */
 }
 
-.day-label, .time-label {
+.day-label,
+.time-label {
   background-color: rgba(255, 255, 255, 0.08);
   text-align: center;
   font-weight: bold;
@@ -373,15 +149,12 @@ body,
   padding: 12px 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(6px);
-  color: inherit;
 }
-
 .time-label {
   text-align: right;
   padding-right: 12px;
   font-weight: 500;
 }
-
 .time-slot {
   background-color: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -389,14 +162,13 @@ body,
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-
 .time-slot:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
 .planner-task {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #111;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
   padding: 6px 10px;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -409,63 +181,161 @@ body,
   text-overflow: ellipsis;
   z-index: 1;
   cursor: grab;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* THEME INTEGRATION */
-body.theme-focus {
-  background: linear-gradient(to right, #e0eafc, #cfdef3);
-  color: #111;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
 }
 
-body.theme-galaxy {
-  background: url('https://images.unsplash.com/photo-1475727946784-418b33b23e2f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-  background-size: cover;
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #000;
   color: #fff;
+  min-width: 300px;
+  max-width: 90%;
 }
 
-body.theme-ocean {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
+.modal-content h2 {
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: #333;
+  color: white;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background: var(--accent);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.modal-buttons button:hover {
+  background: var(--accent-dark);
+}
+
+.planner-task {
+  background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
 }
 
-body.theme-blush {
-  background: linear-gradient(to right, #ffdde1, #ee9ca7);
-  color: #222;
+.planner-task .delete-task {
+  background: none;
+  border: none;
+  color: #ff7675;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
 
-/* Dark mode overlay */
-body.dark {
-  filter: brightness(0.9) contrast(1.1);
+.planner-task .delete-task:hover {
+  color: #ff4d4d;
 }
 
-body.dark .planner-task {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #eee;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.task-work {
+  background-color: #3b82f6; /* Blue */
 }
 
-body.dark .planner-header h3,
-body.dark .day-label,
-body.dark .time-label {
-  color: #ccc;
-  background: rgba(255, 255, 255, 0.05);
+.task-break {
+  background-color: #10b981; /* Green */
 }
 
-body.dark .planner-header button {
-  color: #eee;
-  background: rgba(255, 255, 255, 0.1);
+.task-meeting {
+  background-color: #f97316; /* Orange */
 }
 
-body.dark .planner-header button:hover {
-  background: rgba(255, 255, 255, 0.25);
+.planner-task {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-body.dark .time-slot {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  cursor: ns-resize;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 8px 8px;
 }
 
-body.dark .time-slot:hover {
-  background: rgba(255, 255, 255, 0.08);
+/* Let task grow beyond one slot */
+.time-slot {
+  position: relative;
+  overflow: visible; /* key fix */
+  z-index: 0;
 }
+
+/* Make task position itself relative to .time-slot */
+.planner-task {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  cursor: grab;
+  box-sizing: border-box;
+  transition: height 0.1s ease;
+}
+
+
