@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Focus Hub</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <div id="focus-hub">
-    <h1>Focus Hub</h1>
-    <button id="theme-toggle">Toggle Dark Mode</button>
+    <!-- Header -->
+    <header class="hub-header">
+      <h1>🧠 Focus Hub</h1>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="planner.html">Planner</a>
+        <a href="stats.html">Stats</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <button id="theme-toggle">🌞 / 🌙</button>
+    </header>
 
-    <!-- Clock & Session Timer -->
-    <div id="clock"></div>
-    <div id="session-timer"></div>
-
-    <!-- Click Tracker + Color Flipper (Box that changes color with quotes) -->
-    <div id="color-box">
-      <p>You have clicked <span id="click-count">0</span> times.</p>
+    <!-- Floating Theme Selector -->
+    <div class="theme-selector">
+      <button class="theme-circle" data-theme="focus" title="Focus"></button>
+      <button class="theme-circle" data-theme="galaxy" title="Galaxy"></button>
+      <button class="theme-circle" data-theme="ocean" title="Ocean"></button>
+      <button class="theme-circle" data-theme="blush" title="Blush"></button>
     </div>
 
-    <!-- Random Quote Box (from API) -->
-    <div id="quote-box">
-      <p id="quote">“Loading inspirational quote...”</p>
-      <p id="quote-timer">Next quote in: 4m 00s</p>
-    </div>
+    <!-- Main App Grid -->
+    <main class="dashboard-grid">
+      <!-- Clock & Timer -->
+      <section class="card fade-in">
+        <div id="clock">00:00:00</div>
+        <div id="session-timer">Session: 0h 0m 0s</div>
+      </section>
 
-    <!-- To-Do List -->
-    <div id="todo">
-      <h2>To-Do List</h2>
-      <input type="text" id="todo-input" placeholder="Add a task" />
-      <button id="add-todo">Add</button>
-      <ul id="todo-list"></ul>
-    </div>
+      <!-- Click Counter + Color Box -->
+      <section class="card fade-in" id="color-box">
+        <p>You have clicked <span id="click-count">0</span> times.</p>
+      </section>
+
+      <!-- Quote Box -->
+      <section class="card fade-in" id="quote-box">
+        <button id="refresh-quote" title="Refresh Quote">⟳</button>
+        <p id="quote">“Loading inspirational quote...”</p>
+        <p id="quote-timer">Next quote in: 4m 00s</p>
+      </section>
+
+      <!-- To-Do List -->
+      <section class="card fade-in" id="todo">
+        <h2>📝 To-Do List</h2>
+        <div class="todo-input-row">
+          <input type="text" id="todo-input" placeholder="Add a task" />
+          <button id="add-todo">+</button>
+        </div>
+        <ul id="todo-list"></ul>
+      </section>
+    </main>
   </div>
 
-  <!-- Make sure you’re loading the correct script file -->
+  <!-- JavaScript -->
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>

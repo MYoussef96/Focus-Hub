@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner - Focus Hub</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="theme-focus">
+  <div id="focus-hub">
+    <!-- Header with Navigation -->
+    <header class="hub-header">
+      <h1>🧠 Focus Hub</h1>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="planner.html">Planner</a>
+        <a href="stats.html">Stats</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+      <button id="theme-toggle">🌞 / 🌙</button>
+    </header>
+
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+      <button class="theme-circle" data-theme="focus" title="Focus"></button>
+      <button class="theme-circle" data-theme="galaxy" title="Galaxy"></button>
+      <button class="theme-circle" data-theme="ocean" title="Ocean"></button>
+      <button class="theme-circle" data-theme="blush" title="Blush"></button>
+    </div>
+
+    <!-- Weekly Planner Grid -->
+    <main class="planner-container">
+      <h2>🗓 Weekly Planner</h2>
+      <div class="planner-header">
+        <button id="prev-week">◀️ Prev</button>
+        <h3 id="week-range">Week of [date]</h3>
+        <button id="next-week">Next ▶️</button>
+      </div>
+
+      <div class="planner-grid">
+        <div class="time-label"></div>
+        <div class="day-label">Mon</div>
+        <div class="day-label">Tue</div>
+        <div class="day-label">Wed</div>
+        <div class="day-label">Thu</div>
+        <div class="day-label">Fri</div>
+        <div class="day-label">Sat</div>
+        <div class="day-label">Sun</div>
+
+        <!-- Generate time slots (9am to 5pm, 9 total) -->
+        <!-- JS will be used to generate this later, but we’ll do HTML static for now -->
+        <!-- Time labels + slots per hour -->
+        <!-- Row: 9AM -->
+        <div class="time-label">9 AM</div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+        <div class="time-slot" data-time="9"></div>
+
+        <div class="time-label">10 AM</div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+        <div class="time-slot" data-time="10"></div>
+
+        <div class="time-label">11 AM</div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+        <div class="time-slot" data-time="11"></div>
+
+        <div class="time-label">12 PM</div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+        <div class="time-slot" data-time="12"></div>
+
+        <div class="time-label">1 PM</div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+        <div class="time-slot" data-time="13"></div>
+
+        <div class="time-label">2 PM</div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+        <div class="time-slot" data-time="14"></div>
+
+        <div class="time-label">3 PM</div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+        <div class="time-slot" data-time="15"></div>
+
+        <div class="time-label">4 PM</div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+        <div class="time-slot" data-time="16"></div>
+
+        <div class="time-label">5 PM</div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+        <div class="time-slot" data-time="17"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/planner.js"></script>
+</body>
+</html>
